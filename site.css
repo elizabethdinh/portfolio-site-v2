@@ -20,6 +20,7 @@ html, body {
 a {
     color: #564d90;
     transition: color 0.5s;
+    background-color: transparent;
 }
 
 a:hover {
@@ -74,7 +75,7 @@ h1 {
 
 h2 {
     color: #C2F970;
-    font-size: 12pt;
+    font-size: 14pt;
     line-height: 10px;
     padding-left: 12.5%;
 }
@@ -88,7 +89,7 @@ p {
 }
 
 b {
-    color: #C2F970;
+    color: #98A6D4;
 }
 
 ol {
@@ -109,10 +110,47 @@ ul {
     margin-right: auto;
 }
 
+details {
+    color: #D3FCD5;
+    padding-left: 12.5%;
+}
+
 table {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.project-title {
+    font-size: 14pt;
+    color: #98A6D4;
+    font-weight: 700;
+}
+
+.projects ul {
+    width: 75%;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects ul li{
+    flex: 0 0 50%;
+}
+
+.questions {
+    margin-left: initial;
+    margin-right: initial;
+}
+
+.images {
+    display: inline-flex;
+    justify-content: center;
+}
+
+figure {
+    text-align: center;
 }
 
 .portrait {
@@ -133,4 +171,165 @@ table {
 
 .name:hover {
     color: #C2F970;
+}
+
+.cta {
+	position: relative;
+	margin: auto;
+	padding: 19px 22px;
+	transition: all .2s ease;
+    text-decoration: none;
+}
+
+.cta:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 28px;
+	background: rgba(86, 77, 144, 0.5);
+	width: 56px;
+	height: 56px;
+	transition: all .3s ease;
+}
+
+.cta span {
+	position: relative;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 900;
+	letter-spacing: .25em;
+	text-transform: uppercase;
+    vertical-align: middle;
+    background-color: transparent;
+    color: #D3FCD5
+}
+
+.cta:hover:before {
+	width: 100%;
+	background: #564D90;
+}
+
+.cta:hover svg {
+	transform: translateX(0);
+}
+
+.cta:active {
+	transform: scale(0.96);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 4px;
+}
+  
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 18.75%;
+    max-width: 18.75%;
+    padding: 0 4px;
+}
+  
+.column img {
+    margin-top: 8px;
+    width: 100%;
+    opacity: 70%;
+    transition: opacity 0.5s;
+}
+
+.column img:hover {
+    opacity: 100%;
+}
+
+.galleria {
+    height: 600px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*
+* These styles for text decoration. The demo will be work without it
+*/
+
+.link{
+	color: white;
+	font-size: 16px;
+	font-weight: 700;
+
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/*
+* These styles creates the underlining of link
+*/
+
+.link{
+	position: relative;
+	z-index: 1;
+	display: inline-flex;
+	
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+}
+
+.link::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to top, #564D90 25%, rgba(0, 0, 0, 0) 40%);
+	
+	position: absolute;
+	left: 0;
+	bottom: 2px;
+	z-index: -1;
+	
+	will-change: width;
+	transform: rotate(-2deg);
+	transform-origin: left bottom
+}
+
+.link:hover::before{
+	width: 0;
+}
+
+/*
+* animation styles
+*/
+
+.link::before{
+	transition: width .1s ease-out;
+}
+
+.link:hover::before{
+	transition-duration: .15s;
+}
+
+@media screen and (max-width: 885px) {
+    .name {
+        font-size: 0pt;
+    }
+
+    .projects ul {
+        display: block;
+    }
+
+    .navbar {
+        color: white;
+    }
+
+    .navbar ul {
+        display: block;
+    }
+
+    .navbar ul li {
+        display: block;
+        color: white;
+    }
 }

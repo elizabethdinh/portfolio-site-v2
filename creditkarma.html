@@ -3,6 +3,10 @@
     <head>
         <link rel="stylesheet" type="text/css" href="site.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+        <script src="https://unpkg.com/scrollreveal@4"></script>
+        <script src="galleria-1.6.1/dist/galleria.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="galleria-1.6.1/dist/themes/twelve/galleria.twelve.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta charset="utf-8">
         <title>Credit Karma Redesign</title>
@@ -20,62 +24,157 @@
         </div>
         <br/>
         <h1>Credit Karma Redesign</h1></div>
-        <h2>Introduction</h2>
-        <p>
-            Credit Karma is a tool launched in 2007 that allows over 100 million users to view their credit scores and reports in order to help them manage their money more efficiently. Credit Karma users also have access to features including but not limited to: credit score simulation, auto/mortgage loan comparisons, recommended credit cards, and tax filing.
-        </p>
-        <hr/>
-
+        <table class="info">
+            <col width="75%">
+            <col width="25%">
+            <tr>
+                <td align="left" style="vertical-align: top;"><h2 style="padding-left: 0;">Introduction</h2>
+                    <p style="width: 100%;">
+                        Credit Karma is a tool launched in 2007 that allows over 100 million users to view their credit scores and reports in order to help them manage their money more efficiently. Credit Karma users also have access to features including but not limited to: credit score simulation, auto/mortgage loan comparisons, recommended credit cards, and tax filing.
+                    </p>
+                </td>
+                <td align="left" style="vertical-align: top;">
+                    <h2 style="padding-left: 0;">Role(s)</h2>
+                    <p style="width: 100%;">UX Designer<br/>UX Researcher</p>
+                    <h2 style="padding-left: 0;">Date</h2>
+                    <p style="width: 100%;">Jan 2020 – Mar 2020</p>
+                </td>
+            </tr>
+        </table>
+        <hr class="line"/>
         <h2>Target Audience</h2>
         <p>
-            Credit Karma users are from the United States, United Kingdom, or Canada. Credit Karmas requires users to be at least 18 years of age, but a majority of the users are millennials (ages 24-39).
+            Credit Karma users are from the <b>United States, United Kingdom, or Canada</b>. Credit Karmas requires users to be at least 18 years of age, but a majority of the users are <b>millennials</b> (ages 24-39).
         </p>
 
         <h2>Problem</h2>
         <p>
-            It has a fairly steep learning curve for beginners due to its complicated design. The objective of the application is to make managing money and various loans easier for people, yet it’s confusing for people who do not have much financial knowledge.
+            It has a fairly <b>steep learning curve for beginners</b> due to its complicated design. The objective of the application is to make managing money and various loans easier for people, yet it’s confusing for people who do not have much financial knowledge.
         </p>
 
-        <h2>Examples</h2>
+        <h2>Experienced User Interviews</h2>
         <p>
-            I ran two experienced user interviews and five naive user evaluations. I noticed that:
+            Two experienced Credit Karma users were interviewed and asked to perform the main tasks of the desktop application in order to evaluate the Credit Karma interface. Participant A is a <b>female, 32-year-old psychology major</b> at the University of California, Santa Cruz. She uses Credit Karma and other credit monitoring applications—such as Capital One and Citibank—once or twice a month. Participant B is a <b>female, 21-year-old cognitive science major</b> at the University of California, Santa Cruz. She uses Credit Karma once a month and no other credit monitoring applications.
+        </p>
+        <p>
+            Participants A and B both stated that they use Credit Karma to:
+            
+            <ul>
+                <li>check full credit reports</li>
+                <li>dispute errors on credit reports</li>
+                <li>file tax returns</li>
+                <li>look for new credit cards to apply for</li>
+            </ul>
+            
+            <details>
+                <summary>Interview Questions</summary>
 
+                <ul class="questions">
+                    <li>What do you use Credit Karma for?</li>
+                    <li>How often do you use this app?</li>
+                    <li>What do you think of this app?</li>
+                    <li>How would you do [this purpose you are using Credit Karma for]?</li>
+                    <li>Would you add any features or improvements to this app?</li>
+                </ul>
+            </details>
+        </p>
+        <h2>Naive User Evaluations</h2>
+        <p>
+            The novice users <b>attend the University of California, Santa Cruz and have never used a credit monitoring application, unless stated otherwise</b>. Participant C is a female, 21-year-old cognitive science and biology double major. Participant D is a female, 21-year-old psychology major and education minor. Participant E is a gender-fluid, 21-year-old psychology major. Participant F is a male, 21-year-old aviation business administration and air traffic management double major at Embry Riddle Aeronautical University in Prescott, Arizona; he uses CreditWise from Capital One to monitor his credit score once a month. Participant G is a male, 21-year-old computer engineering major at California Polytechnic State University, Pomona.
+        </p>
+        <p>
+            When I interviewed them and observed them completing tasks on the platform, I noticed that:
             <ul>
                 <li>When asked to find the credit score simulator, most people struggled</li>
                 <li>People felt annoyed with the large number of ads on the website</li>
                 <li>Users were confused by unintuitive links on the menu (like Money Center)</li>
             </ul>
+
+            <details>
+                <summary>Tasks Evaluated</summary>
+                <ul class="questions">
+                    <li>Register for Credit Karma.</li>
+                    <li>Check your credit score. Look for credit card accounts and credit inquiries.</li>
+                    <li>Find the credit card simulator. See what would happen if you were to add a new credit card with a credit limit of $5000. See what would happen if you were to miss one payment by one month.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Interview Questions</summary>
+                <ul class="questions">
+                    <li>To begin, please tell me a little about yourself.</li>
+                    <li>Have you ever used Credit Karma before?</li>
+                    <li>Have you used any systems similar to Credit Karma?
+                        <ul class="questions">
+                            <li>If so, how frequently do you use this? When was the last time you used this?
+                            </li>
+                        </ul>
+                    </li>
+                    <li>What do you think of this app?</li>
+                    <li>Would you add any features or improvements to this app?</li>
+                    <li>What do you like about this app?</li>
+                    <li>What was difficult about task 1? Repeat for tasks 2 and 3.</li>
+                    <li>What was easy to do in task 1? Repeat for tasks 2 and 3.</li>
+                </ul>
+            </details>
         </p>
 
         <h2>Solutions</h2>
         <p>
+            To make Credit Karma <b>more user-friendly and intuitive, especially for people new to credit cards and loans</b>, I:
             <ul>
-                <li>I decluttered the menu and gave some features more intuitive names (e.g. renamed Money Center to Cash Ideas, since its purpose was to suggest users on how to earn cash quickly short-term)</li>
-                <li>Putting the Credit Card Simulator feature on the front page was important, since many users want this feature yet it’s so hard to find</li>  
-                <li>I added an optional tutorial for first-time users, since many people are not properly educated on managing money and credit cards/loans</li>
+                <li>Decluttered the menu and gave some features more intuitive names (e.g. renamed Money Center to Cash Ideas, since its purpose was to suggest users on how to earn cash quickly short-term)</li>
+                <li>Put the Credit Card Simulator feature on the front page, since many users want this feature yet it’s so hard to find</li>  
+                <li>Added an optional tutorial for first-time users, since many people are not properly educated on managing money and credit cards/loans</li>
             </ul>
         </p>
         
         <h2>Wireframes</h2>
-        <div class="center"><img src="Wireframes/CreditKarma/Page1.jpg" width="25%"/><img src="Wireframes/CreditKarma/Page2.jpg" width="25%"/></div>
+        <div class="galleria">
+            <img src="Wireframes/CreditKarma/Page1.jpg"/>
+            <img src="Wireframes/CreditKarma/Page2.jpg"/>
+        </div>
         <h2>High Fidelity Prototypes</h2>
-        <div class="center"><img src="Prototypes/CreditKarma/Dashboard.png" width="50%"/></div>
+        <div class="galleria">
+            <img src="Prototypes/CreditKarma/Dashboard.png" data-title="Dashboard"/>
+            <img src="Prototypes/CreditKarma/Tutorial.png" data-title="Tutorial for First-Time Users"/>
+            <img src="Prototypes/CreditKarma/Calculators.png" data-title="Calculators"/>
+            <img src="Prototypes/CreditKarma/IdentityVerification.png" data-title="Identity Verification in Registration"/>
+        </div>
         <br/>
-        <div style="text-align:center;"><i>Dashboard</i></div>
         <br/>
-        <div class="center"><img src="Prototypes/CreditKarma/Tutorial.png" width="50%"/></div>
         <br/>
-        <div style="text-align:center;"><i>Dashboard - Tutorial</i></div>
+        <div class="center">
+            <a href="https://www.figma.com/file/5fOKyOtRvbuAlMoAUSet5R/Credit-Karma-Redesign?node-id=0%3A1" class="cta">
+                <span>View the Figma prototype</span>
+            </a>
+        </div>
+
+        <script>
+            ScrollReveal().reveal('.info');
+            ScrollReveal().reveal('.line');
+            ScrollReveal().reveal('.target');
+            ScrollReveal().reveal('.needfinding');
+            ScrollReveal().reveal('.heuristic');
+            ScrollReveal().reveal('.wireframes');
+            ScrollReveal().reveal('.wireframeIMG');
+            ScrollReveal().reveal('.problems');
+            ScrollReveal().reveal('.solutions');
+            ScrollReveal().reveal('.solutions2');
+            ScrollReveal().reveal('.cta');
+        </script>
+
+        <script>
+            (function() {
+                Galleria.loadTheme('galleria-1.6.1/src/themes/twelve/galleria.twelve.js');
+                Galleria.run('.galleria');
+                Galleria.configure({
+                    imageCrop: false,
+                    transition: 'fade'
+                });
+            }());
+        </script>
         <br/>
-        <div class="center"><img src="Prototypes/CreditKarma/Calculators.png" width="50%"/></div>
-        <br/>
-        <div style="text-align:center;"><i>Calculators</i></div>
-        <br/>
-        <div class="center"><img src="Prototypes/CreditKarma/IdentityVerification.png" width="50%"/></div>
-        <br/>
-        <div style="text-align:center;"><i>Registration - Identity Verification</i></div>
-        <br/>
-        <a class="button-link" href="https://www.figma.com/file/5fOKyOtRvbuAlMoAUSet5R/Credit-Karma-Redesign?node-id=0%3A1"><div align="center"><div class="redirect-button">View the high fidelity prototype in Figma</div></div></a>
         <br/>
     </body>
 </html>

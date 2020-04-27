@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://unpkg.com/scrollreveal@4"></script>
         <link rel="stylesheet" type="text/css" href="site.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+        <script src="galleria-1.6.1/dist/galleria.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="galleria-1.6.1/dist/themes/twelve/galleria.twelve.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta charset="utf-8">
         <title>UCSC Undergraduate Research Opportunities</title>
@@ -20,7 +24,7 @@
         </div>
         <br/>
         <h1>UCSC Undergraduate Research Opportunities</h1>
-            <table>
+        <table class="info">
                 <col width="75%">
                 <col width="25%">
                 <tr>
@@ -38,59 +42,153 @@
                 </tr>
         </table>
 
-        <hr/>
-        <h2>Target Audience</h2>
-        <p>
-            Users of the UCSC undergraduate research website are typically UCSC undergraduate students and professors. Specifically, this website attracts undergraduate students who are interested in graduate school and need labs to apply to graduate programs. It also lures in professors seeking students to help with their labs.
-        </p>
-        <h2>Needfinding</h2>
-        <p>
-            Based off eight interviews of UCSC students who have worked as undergraduate research assistants, students wanted the following in the website:
-            <ul>
-                <li>Easy access to information on current available lab positions</li>
-                <li>Efficient communication with graduate students and professors</li>
-                <li>Information on what it’s like to be in a research lab</li>
-                <li>Guidance on applying to labs and how will labs help with future plans</li>
-            </ul>
-        </p>
-        <h2>Heuristics Analysis</h2>
-        <p>After running heuristic evaluations on the currently deployed website, we found major flaws:
-            <ul>
-                <li>The website is too cluttered in both the navigation menu and page content</li>
-                <li>The search bar doesn’t give users feedback</li>
-            </ul>
-        </p>
-        <h2>Wireframes</h2>
-        <p>
-            Based on our findings from interviews and heuristic evaluations, Ivy and I created two different wireframes to use for user testing. Ivy sketched out prototype A, whereas I worked on prototype B.
-        </p>
-        <div class="center"><img src="Wireframes/UGR/PrototypeA.jpg" width="16.5%"/><img src="Wireframes/UGR/PrototypeB.jpg" width="25%"/></div>
-        <br/>
-        <h2>Problems</h2>
-        <p>
-            After running eight user evaluations using A/B testing and WoZ testing, we found that:
-            <ul>
-                <li>Occasionally, users struggled with finding contact info for labs</li>
-                <li>Users did not have an easy way out if they got stuck or were confused</li>
-                <li>Users tend to use the search bar to find information when they don’t know which link to click on</li>
-                <li>Interviewees seemed to have an easier time using prototype B</li>
-            </ul>
-        </p>
-        <h2>Solutions</h2>
-        <p>
-            We simplified the menu structure and made link names more intuitive to prevent users from being confused and overwhelmed.
-        </p>
-        <div align="center">
-            <img src="Prototypes/UGR/Landing.jpg" width="16.6%"/><img src="Prototypes/UGR/Landing – Expanded Search Bar.jpg" width="16.6%"/><img src="Prototypes/UGR/Side Bar.jpg" width="16.6%"/>
+        <hr class="line"/>
+        <div class="target">
+            <h2>Target Audience</h2>
+            <p>
+                Users of the UCSC undergraduate research website are typically <b>UCSC undergraduate students and professors</b>. Specifically, this website attracts undergraduate students who are interested in graduate school and need labs to apply to graduate programs. It also lures in professors seeking students to help with their labs.
+            </p>
         </div>
-        <p>
-            We also gave users an FAQ page and feedback as they type in letters into the search bar.
-        </p>
-        <div align="center">
-            <img src="Prototypes/UGR/Engr Labs – mecheng.jpg" width="16.6%"/><img src="Prototypes/UGR/Lab Page.jpg" width="16.6%"/><img src="Prototypes/UGR/FAQ – Faculty-Professor Contact Info.jpg" width="16.6%"/>
+        <div class=needfinding>
+            <h2>Needfinding</h2>
+            <p>
+                Based off eight interviews of UCSC students who have worked as undergraduate research assistants, students wanted the following in the website:
+                <ul>
+                    <li>Easy access to information on current available lab positions</li>
+                    <li>Efficient communication with graduate students and professors</li>
+                    <li>Information on what it’s like to be in a research lab</li>
+                    <li>Guidance on applying to labs and how will labs help with future plans</li>
+                </ul>
+
+                <details>
+                    <summary>Needfinding Questions</summary> 
+                    <ul class="questions">
+                        <li>Asking about person’s background; What is your major/year?</li>
+                        <li>Have you considered/been interested in research?
+                            <ul class="questions">
+                                <li>IF YES: What is your opinion on doing research as an undergrad student/participating in? What kind of research opportunities are you interested in? </li>
+                                <li>IF NO: What is your idea of research?</li>
+                                <li>IF UNSURE: What would pique your interest in research?</li>
+                            </ul>
+                        </li>
+                        <li>How do you feel about knowing where to find undergraduate research?</li>
+                        <li>If you wanted to get involved in undergraduate research, what would you do?</li>
+                        <li>Are you currently involved with research?
+                            <ul class="questions">
+                                <li>IF YES: How did you find out about your current position? What is your opinion on research?</li>
+                                <li>IF NO: Move on</li>
+                            </ul>
+                        </li>
+                        <li>Have you used the site?
+                            <ul class="questions">
+                                IF YES: How much? What did you do on the website? Why were you on the website?
+                                IF NO: Have you previously heard of the website? 
+                            </ul> 
+                        <li>Where do you find news about research?</li>
+                        <li>What is your idea of a research website? What would you want out of a research website; What do you look for in a research website?</li>
+                        <li>What kind of information would you want to get with this website?</li>
+                    </ul>
+                </details>
+            </p>
+        </div>
+        <div class="heuristic">
+            <h2>Heuristics Analysis</h2>
+            <p>After running heuristic evaluations on the currently deployed website, we found major flaws:
+                <ul>
+                    <li>The website is <b>too cluttered</b> in both the navigation menu and page content</li>
+                    <li>The search bar <b>doesn’t give users feedback</b></li>
+                </ul>
+            </p>
+        </div>
+        <div class="wireframes">
+            <h2>Wireframes</h2>
+            <p>
+                Based on our findings from interviews and heuristic evaluations, Ivy and I created two different wireframes to use for user testing. Ivy sketched out prototype A, whereas I worked on prototype B.
+            </p>
+        </div>
+        <div class="wireframeIMG">
+            <div class="galleria">
+                <img src="Wireframes/UGR/PrototypeA.jpg" data-title="Prototype A by Ivy"/>
+                <img src="Wireframes/UGR/PrototypeB.jpg" data-title="Prototype B by me"/>
+            </div>
         </div>
         <br/>
-        <a class="button-link" href="https://xd.adobe.com/view/f535b2ba-8ecf-4b20-44b7-1f03a39bdcd0-8304/?fullscreen"><div align="center"><div class="redirect-button">View the high fidelity prototype in Adobe XD</div></div></a>
+        <div class="problems">
+            <h2>Problems</h2>
+            <p>
+                After running eight user evaluations using A/B testing and WoZ testing, we found that:
+                <ul>
+                    <li>Occasionally, users <b>struggled with finding contact info</b> for labs</li>
+                    <li>Users did not have an easy way out if they got stuck or were confused</li>
+                    <li>Users tend to use the search bar to find information when they don’t know which link to click on</li>
+                    <li>Interviewees seemed to have an <b>easier time using prototype B</b> based on after-survey responses and time taken to complete tasks in both prototypes</li>
+                </ul>
+            </p>
+            
+            <details>
+                <summary>Tasks Used to Measure Performance</summary>
+                <ul class="questions">
+                    <li>Find what labs have current openings for undergraduate research assistants.</li>
+                    <li>Find more information about research in your major or other majors you are interested in.</li>
+                    <li>Find contact information for grad students and professors in a research lab.</li>
+                </ul>
+            </details>
+        </div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <p>
+                We <b>simplified the menu structure</b> and made link names more intuitive to prevent users from being confused and overwhelmed.
+            </p>
+            <div class="galleria">
+                <img src="Prototypes/UGR/Landing.jpg" data-title="Landing Page"/>
+                <img src="Prototypes/UGR/Landing – Expanded Search Bar.jpg" data-title="Search Bar"/>
+                <img src="Prototypes/UGR/Side Bar.jpg" data-title="Side Bar"/>
+            </div>
+        </div>
+        
+        <div class="solutions2">
+            <p>
+                We also gave users an <b>FAQ page</b> and <b>feedback</b> as they type in letters into the search bar.
+            </p>
+            <div class="galleria">
+                <img src="Prototypes/UGR/Engr Labs – mecheng.jpg" data-title="Engineer Division Labs"/>
+                <img src="Prototypes/UGR/Lab Page.jpg" data-title="Lab Info Page"/>
+                <img src="Prototypes/UGR/FAQ – Faculty-Professor Contact Info.jpg" data-title="FAQ"/>
+            </div>
+        </div>
         <br/>
+        <br/>
+        <div class="center">
+            <a href="https://xd.adobe.com/view/f535b2ba-8ecf-4b20-44b7-1f03a39bdcd0-8304/?fullscreen" class="cta">
+                <span>View the Adobe XD prototype</span>
+            </a>
+        </div>
+        <br/>
+        <br/>
+
+        <script>
+            ScrollReveal().reveal('.info');
+            ScrollReveal().reveal('.line');
+            ScrollReveal().reveal('.target');
+            ScrollReveal().reveal('.needfinding');
+            ScrollReveal().reveal('.heuristic');
+            ScrollReveal().reveal('.wireframes');
+            ScrollReveal().reveal('.wireframeIMG');
+            ScrollReveal().reveal('.problems');
+            ScrollReveal().reveal('.solutions');
+            ScrollReveal().reveal('.solutions2');
+            ScrollReveal().reveal('.cta');
+        </script>
+
+        <script>
+            (function() {
+                Galleria.loadTheme('galleria-1.6.1/src/themes/twelve/galleria.twelve.js');
+                Galleria.run('.galleria');
+                Galleria.configure({
+                    imageCrop: false,
+                    transition: 'fade'
+                });
+            }());
+        </script>
     </body>
 </html>

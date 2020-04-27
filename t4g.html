@@ -2,7 +2,11 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="site.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+        <script src="galleria-1.6.1/dist/galleria.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal@4"></script>
+        <link rel="stylesheet" type="text/css" href="galleria-1.6.1/dist/themes/twelve/galleria.twelve.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta charset="utf-8">
         <title>Tech4Good</title>
@@ -19,23 +23,55 @@
             </ul> 
         </div>
         <br/>
+        <div class="t4g">
         <h1>Tech4Good</h1>
-        <p>
-            I have been working as an undergraduate research assistant and UX designer at UCSC professor David Lee’s Tech4Good lab since September 2019. Tech4Good focuses on studying the intersection of computational systems and social interaction. Working in this lab has been a wonderful experience because it allows me to apply my knowledge of human-computer interaction into projects and gain new skills that I would not acquire from classes.
-        </p>
-        <h1>Collectively</h1>
-        <h2>Introduction</h2>
-        <p>
-            Collectively aims to unite students into reading groups and skill-building groups for them to explore real world applications of computer science and other subjects.
-        </p>
+            <p>
+                I have been working as an undergraduate research assistant and UX designer at UCSC professor David Lee’s Tech4Good lab since September 2019. Tech4Good focuses on studying the intersection of computational systems and social interaction. Working in this lab has been a wonderful experience because it allows me to apply my knowledge of human-computer interaction into projects and gain new skills that I would not acquire from classes.
+            </p>
+        </div>
         <hr/>
-        <h2>Target Audience</h2>
-        <p>
-            Collectively is targeted at both undergraduate and graduate students at UC Santa Cruz. It also involves UC Santa Cruz professors to help them promote their labs and information relating to their areas of research.
-        </p>
+        <h1 class="collectively">Collectively</h1>
+        <table class="info">
+            <col width="75%">
+            <col width="25%">
+            <tr>
+                <td align="left" style="vertical-align: top;"><h2 style="padding-left: 0;">Introduction</h2>
+                    <p style="width: 100%;">
+                        Collectively aims to unite students into <b>reading groups and skill-building groups</b> for them to explore real world applications of computer science and other subjects.
+                    </p>
+                </td>
+                <td align="left" style="vertical-align: top;">
+                    <h2 style="padding-left: 0;">Role(s)</h2>
+                    <p style="width: 100%;">UX Designer<br/>UX Researcher<br/>Front-End Developer</p>
+                    <h2 style="padding-left: 0;">Date</h2>
+                    <p style="width: 100%;">Sept 2019 – present</p>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <div class='target'>
+            <h2>Target Audience</h2>
+            <p>
+                Collectively is targeted at both <b>undergraduate and graduate students at UC Santa Cruz</b>. It also involves UC Santa Cruz <b>professors</b> to help them promote their labs and information relating to their areas of research.
+            </p>
+        </div>
+        <div class='goals'>
         <h2>Design Goals</h2>
         <p>
-            We surveyed 48 undergraduate and graduate students. These students were either cognitive science majors or <a target="_blank" rel="noopener noreferrer" href="https://undergrad.soe.ucsc.edu/index.php/programs">engineering majors</a>. Based on our survey responses, it is important that Collectively provides:
+            We sent out surveys to eight faculty members to determine what they would want out of Collectively. From their responses, we determined that they want <b>motivated undergraduate students</b> who are truly interested in contributing to their research labs. This desire stems from <b>unfavorable opinions of undergraduate research assistants</b>b because professors have had bad experiences with flaky and inexperienced undergraduates.
+            <details>
+                <summary>Faculty Survey Questions</summary>
+                <ul class="questions">
+                    <li>Are you working with undergraduates in your lab? If so, how do you feel about them?</li>
+                    <li>How do undergraduate research assistants compared to graduate research assistants?</li>
+                    <li>What would you share or advise a new faculty who asks you about working with undergraduate student researchers?</li>
+                    <li>What are your criteria for undergraduate students interested in your lab?</li>
+                    <li>What kind of tasks do you typically assign undergraduate research assistants?</li>
+                </ul>
+            </details>
+        </p>
+        <p>
+            We also surveyed 48 undergraduate and graduate students. These students were either cognitive science majors or <a target="_blank" rel="noopener noreferrer" href="https://undergrad.soe.ucsc.edu/index.php/programs">engineering majors</a>. Based on our survey responses, it is important that Collectively provides:
             <ul>
                 <li>a space to explore new ideas</li>
                 <li>exposure to topics outside their discipline</li>
@@ -43,15 +79,76 @@
                 <li>a chance to join a research lab</li>
                 <li>a low time commitment</li>
             </ul>
+
+            <details>
+                <summary>Student Survey Questions</summary>
+                <ul class="questions">
+                    <li>Demographics (gender, year in college, major, gender, how did you hear about us, etc.)</li>
+                    <li>What motivated you to join or return to the reading groups this phase? </li>
+                    <li>Is this your first time joining the Collectively reading groups?</li>
+                    <li>What motivated you to join Collectively?</li>
+                    <li>Do you have any concerns or questions that make you unsure whether to join?</li>
+                </ul>
+            </details>
         </p>
+        </div>
+        <div class="solutions">
         <h2>Solutions</h2>
-        <p>
-            To attract highly motivated students as better quality research assistants, we designed Collectively so that students participate in reading groups or skill-building groups that interest them the most; doing this will help them find labs pertaining to their interests.
-        </p>
-        <p>
-            We also added featured professors to every reading group, so students are able to contact them for possible research opportunities.
-        </p>
-        <h2>Wireframes</h2>
+            <p>
+                To attract highly motivated students as better quality research assistants, we designed Collectively so that students <b>participate in reading groups or skill-building groups that interest them the most</b>; doing this will help them find labs pertaining to their interests. We also decided to implement a group-matching algorithm to make the program less chaotic.
+            </p>
+            <p>
+                We also added featured professors to every reading group, so students are able to contact them for possible research opportunities.
+            </p>
+        </div>
+        <div class="wireframes">
+            <h2>Wireframes</h2>
+                <p>Note that I only sketched wireframes for the registration portion; Dustin sketched the rest.</p>
+                <div class="galleria">
+                    <img src="Wireframes/Collectively/Page1.jpg"/>
+                    <img src="Wireframes/Collectively/Page2.jpg"/>
+                </div>
+        </div>
+        <div class="hifi">
         <h2>High Fidelity Mockups</h2>
+            <div class="galleria">
+                <img src="Prototypes/Collectively/Landing.jpg" data-title="Landing Page"/>
+                <img src="Prototypes/Collectively/Group_ Not Logged- Extended Header.jpg" data-title="List of Groups"/>
+                <img src="Prototypes/Collectively/group_ not logged in.jpg" data-title="Group Info Page"/>
+                <img src="Prototypes/Collectively/create-group.jpg" data-title="Create Group"/>
+                <img src="Prototypes/Collectively/Initial Placement.jpg" data-title="Initial Placement After Registration"/>
+                <img src="Prototypes/Collectively/group_matched.jpg" data-title="Why was I placed into this group?"/>
+                <img src="Prototypes/Collectively/Sign in.jpg" data-title="Sign In"/>
+                <img src="Prototypes/Collectively/Registration.jpg" data-title="Registration"/>
+                <img src="Prototypes/Collectively/Personal Info.jpg" data-title="Registration Part 2"/>
+                <img src="Prototypes/Collectively/Schedule.jpg" data-title="Registration Part 3"/>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <script>
+            (function() {
+                Galleria.loadTheme('galleria-1.6.1/src/themes/twelve/galleria.twelve.js');
+                Galleria.run('.galleria');
+                Galleria.configure({
+                    imageCrop: false,
+                    transition: 'fade'
+                });
+            }());
+        </script>
+
+        <script>
+            ScrollReveal().reveal('.t4g');
+            ScrollReveal().reveal('.collectively');
+            ScrollReveal().reveal('.info');
+            ScrollReveal().reveal('.target');
+            ScrollReveal().reveal('.goals');
+            ScrollReveal().reveal('.solutions');
+            ScrollReveal().reveal('.wireframes');
+            ScrollReveal().reveal('.hifi');
+        </script>
     </body>
 </html>
