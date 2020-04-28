@@ -311,13 +311,21 @@ figure {
 	transition-duration: .15s;
 }
 
-@media screen and (max-width: 885px) {
+@media screen and (max-width: 1000px) {
     .name {
         font-size: 0pt;
+    }
+    
+    .home {
+        font-size: 16pt;
     }
 
     .projects ul {
         display: block;
+    }
+
+    .project-title {
+        color: #C2F970;
     }
 
     .navbar {
@@ -331,5 +339,6 @@ figure {
     .navbar ul li {
         display: block;
         color: white;
+        font-size: 16pt;
     }
 }
