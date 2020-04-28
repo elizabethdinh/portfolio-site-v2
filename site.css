@@ -341,4 +341,8 @@ figure {
         color: white;
         font-size: 16pt;
     }
+
+    .galleria {
+        width: 80%;
+    }
 }
