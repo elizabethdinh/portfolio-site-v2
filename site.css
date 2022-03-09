@@ -346,3 +346,8 @@ figure {
         width: 80%;
     }
 }
+
+iframe {
+    display: block;
+    margin: 0 auto;
+ }
